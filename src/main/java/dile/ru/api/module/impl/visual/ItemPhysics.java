@@ -1,0 +1,20 @@
+package dile.ru.api.module.impl.visual;
+
+import dile.ru.api.module.Module;
+import dile.ru.api.module.ModuleCategory;
+import dile.ru.api.settings.impl.ModeSetting;
+
+public class ItemPhysics extends Module {
+    private static ItemPhysics instance;
+
+    private final ModeSetting mode = register(new ModeSetting("Physics", "Dropped item physics mode.", "Normal", "Normal"));
+
+    public ItemPhysics() {
+        super("Item Physics", "Adds ground physics to dropped items.", ModuleCategory.VISUAL);
+        instance = this;
+    }
+
+    public static ItemPhysics getInstance() {
+        return instance;
+    }
+}
